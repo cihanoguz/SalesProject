@@ -52,7 +52,7 @@ namespace Mobiliva.API.Services.Rabbitmq
 
 		public void TestRabbitmq()
 		{
-            var factory = new ConnectionFactory() { Uri = new Uri("amqp://cihanoguz92:Yorumyok2*@3.73.145.125:5672/", UriKind.RelativeOrAbsolute) };
+            var factory = new ConnectionFactory() { Uri = new Uri("yourdata", UriKind.RelativeOrAbsolute) };
 
             using (var connection = factory.CreateConnection())
             {
