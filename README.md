@@ -22,7 +22,7 @@ API development will be made for order transactions. The infrastructure, tools a
   4.	OrderDetail Entity
       Id, OrderId, ProductId, UnitPrice,
   5.	CreateOrderRequest
-      CustomerName, CustomerEmail, CustomerGSM, List<ProductDetail>. ProductDetail objesi: ProductId,UnitPrice,Amount
+      CustomerName, CustomerEmail, CustomerGSM, List<ProductDetail>. ProductDetail object: ProductId,UnitPrice,Amount
   6.	ApiResponse
       Status (Success,Failed enum) , ResultMessage,ErrorCode,Data (GenericType)
 
