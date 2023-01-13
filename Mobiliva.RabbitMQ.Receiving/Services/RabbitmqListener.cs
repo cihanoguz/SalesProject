@@ -29,15 +29,18 @@ namespace Mobiliva.RabbitMQ.Receiving.Services
             /*
              * NotificationManager
              * Mail atma işlemini business içerisinde halletmek lazım. done 
-             * Sms atma işlemi business içerisinde halletmek lazım. done 
+             * Sms atma işlemi business içerisinde halletmek lazım. NotificationManager sms içinde geliştirebilir yapıldı.done 
              * Backoffice gibi bir arayüz olup buradan gönderilecek mailin içerği db'ye basılıp dinamik olarak kod tarafında ilgili mail sablonu oluşturulabilir.
              * MessageQueqe Rabbit kullanyoruz. İleride yeni bir queq yapısı kullansak bunu dönüştürebilir miyiz ? Kafka kullanacağım sistemi değiştir.
+             * MessageQueqe için Outbox Design Pattern uygulanabilir mi araştıralacak.
              * Memory Cache kullanıyor ama muadil olarak dedi ki Redis kullanalaım sistemi çevirebilmek için modüler gitmek lazım
              * memory cache midddleware olarak yapılabilir mi 
-             * page işlemleri için de bir method yap parametreye bağlı geri dönsün
+             * .Net 7 gelen output caching e benzer olabilir
+             * page işlemleri için de bir method yap parametreye bağlı geri dönsün biraz daha düşün 
              * 1.Entity var ,2.Db'ye göndermek için bir Record olacak. 3. Response View modellerin oalcak.
-             * Örnerğin, Order db entity,2.OrderRequestModel (record, Business'a gidecek model), 3.OrderResponseViewModel
-             * Test
+             * Örnerğin, Order db entity,2.OrderRequestModel (record, Business'a gidecek model), 3.OrderResponseViewModel done 
+             * Test yazılacak
+             * loglama işlemleri elden geçirelecek
              */
             /*var services = new ServiceCollection();
             var serviceProvider = services.BuildServiceProvider();

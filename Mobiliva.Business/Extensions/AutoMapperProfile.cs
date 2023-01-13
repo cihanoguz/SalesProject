@@ -1,9 +1,9 @@
 ﻿using System;
-using Mobiliva.Model.Dto;
 using AutoMapper;
-using Mobiliva.DAL.Entities;
+using Mobiliva.DAL.Entities.Products;
+using Mobiliva.Model.Dto;
 
-namespace Mobiliva.API.Code
+namespace Mobiliva.Business.Extensions
 {
     public class AutoMapperProfile : Profile
     {

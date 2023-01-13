@@ -1,6 +1,7 @@
 ﻿using Mobiliva.Core.Entity;
 using Mobiliva.DAL.Entities;
 using Mobiliva.DAL.Entities.Orders;
+using Mobiliva.DAL.Entities.Products;
 using Mobiliva.Entity.Logs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;

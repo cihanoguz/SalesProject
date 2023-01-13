@@ -16,7 +16,7 @@ configuration = new ConfigurationBuilder()
 var services = new ServiceCollection();
 services.AddSingleton<IConfiguration>(configuration);
 services.AddSingleton<RabbitmqListener>();
-services.AddSingleton<INotificationManager, NotificationManager>();
+services.AddScoped<INotificationManager, NotificationManager>();
 
 var serviceProvider = services.BuildServiceProvider();
 var rabbit = serviceProvider.GetService<RabbitmqListener>();

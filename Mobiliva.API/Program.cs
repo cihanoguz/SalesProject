@@ -1,15 +1,17 @@
-﻿using Mobiliva.API.Services.Product;
+﻿using Mobiliva.Business.ProductManager;
 using Mobiliva.DAL;
 using Mobiliva.Entity.Logs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Mobiliva.Repository.Customers.Repository;
 using Mobiliva.Repository.Products.Interface;
+using Mobiliva.Business.Cache;
 using Serilog;
 using Serilog.Context;
 using Serilog.Core;
 using Serilog.Sinks.MSSqlServer;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Caching.Memory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,8 +33,13 @@ builder.Logging.AddSerilog(log);
 
 #endregion
 
+
+builder.Services.AddMemoryCache();
+
+builder.Services.AddSingleton<ICacheManager, MemoryCacheManager>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
 
 
 builder.Services.AddControllers();

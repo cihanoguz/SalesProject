@@ -1,7 +1,7 @@
 ﻿using System;
 using Mobiliva.Core.Entity;
 
-namespace Mobiliva.DAL.Entities
+namespace Mobiliva.DAL.Entities.Products
 {
     public class Product : BaseEntity
     {

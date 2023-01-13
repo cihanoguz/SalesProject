@@ -1,36 +1,25 @@
 ﻿using System;
-using Mobiliva.API.Code;
+using Mobiliva.Business.ProductManager;
 using Mobiliva.Model.Dto;
 using Mobiliva.Model.Request;
-using Mobiliva.API.Services.Product;
 using Mobiliva.API.Services.Rabbitmq;
-using AutoMapper;
-using Mobiliva.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Mobiliva.Model;
-using Mobiliva.Model.Request;
 using Mobiliva.Model.Response;
-using Mobiliva.Repository.Products.Interface;
+using Mobiliva.API.Code;
 
 namespace Mobiliva.API.Controllers
 {
     public class ProductController : BaseController<ProductController>
     {
-        private readonly IProductRepository _productRepository;
         private readonly ILogger<ProductController> _logger;
-        private readonly IMapper _mapper;
         private readonly IProductService _productService;
 
-        public ProductController(IProductRepository productRepository,
-            ILogger<ProductController> logger,
-            IMapper mapper,
+        public ProductController(ILogger<ProductController> logger,
             IProductService productService) 
         {
-            _productRepository = productRepository;
             _logger = logger;
-            _mapper = mapper;
             _productService = productService;
         }
 
@@ -82,14 +71,15 @@ namespace Mobiliva.API.Controllers
 
             try
             {
-                Product dto = new Product();
+               /* Product dto = new Product();
                 dto.Category = "test";
                 dto.Description = "test";
                 dto.Unit = 1;
                 dto.UnitPrice = 14;
+               */
 
 
-                _productRepository.Add(dto);
+               // _productRepository.Add(dto);
 
             }
             catch (Exception ex)

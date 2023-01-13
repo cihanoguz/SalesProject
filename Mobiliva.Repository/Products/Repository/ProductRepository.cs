@@ -1,5 +1,5 @@
 ﻿using Mobiliva.DAL;
-using Mobiliva.DAL.Entities;
+using Mobiliva.DAL.Entities.Products;
 using Mobiliva.Repository.Base;
 using Mobiliva.Repository.Products.Interface;
 

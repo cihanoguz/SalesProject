@@ -4,7 +4,7 @@ using Mobiliva.Model.Request;
 using Mobiliva.Model.Response;
 using Mobiliva.Model;
 
-namespace Mobiliva.API.Services.Product
+namespace Mobiliva.Business.ProductManager
 {
 	public interface IProductService
 	{
