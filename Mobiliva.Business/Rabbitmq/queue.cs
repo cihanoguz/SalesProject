@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using RabbitMQ.Client;
 namespace Mobiliva.API.Services.Rabbitmq
 {
-	public class que
+	public class queue
 	{
         #region 
         private IConnection connection;

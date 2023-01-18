@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobiliva.RabbitMQ.Receiving
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobiliva.Business", "Mobiliva.Business\Mobiliva.Business.csproj", "{5D43243A-9E6C-4F86-B7E1-1EE180C8BBBF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5D14727E-D927-45D7-B623-157065721F75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobiliva.API.UnitTest", "Mobiliva.API.UnitTest\Mobiliva.API.UnitTest.csproj", "{43D02C3E-98D4-45D8-A7D4-0486E25223BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{5D43243A-9E6C-4F86-B7E1-1EE180C8BBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D43243A-9E6C-4F86-B7E1-1EE180C8BBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D43243A-9E6C-4F86-B7E1-1EE180C8BBBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D02C3E-98D4-45D8-A7D4-0486E25223BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D02C3E-98D4-45D8-A7D4-0486E25223BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D02C3E-98D4-45D8-A7D4-0486E25223BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D02C3E-98D4-45D8-A7D4-0486E25223BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +76,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BF512D46-7AF3-4949-80FC-8E59AB5E7448} = {6B623B59-7452-4E67-A894-9D663ED4B03F}
+		{43D02C3E-98D4-45D8-A7D4-0486E25223BF} = {5D14727E-D927-45D7-B623-157065721F75}
 	EndGlobalSection
 EndGlobal

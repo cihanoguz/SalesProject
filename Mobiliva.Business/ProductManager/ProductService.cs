@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using Mobiliva.Model.Dto;
 using Mobiliva.Model.Request;
 using AutoMapper;
@@ -11,6 +11,7 @@ using Mobiliva.DAL.Entities.Products;
 using Mobiliva.Business.Cache;
 using Mobiliva.Repository.Customers.Repository;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace Mobiliva.Business.ProductManager
 {
@@ -42,7 +43,7 @@ namespace Mobiliva.Business.ProductManager
             try
             {
                 var query = GetProductsFromCache();
-                var query1 = _productRepository.GetBy(x => x.RecordStatus == Mobiliva.Core.Enums.Enums.RecordStatus.Active);
+           
 
                 if (request.Skip < 1)
                 {
@@ -61,6 +62,9 @@ namespace Mobiliva.Business.ProductManager
                 {
                     //query = query.Where(x => (request.MaxUnitPrice > 0 ? x.UnitPrice < request.MaxUnitPrice));
                 }
+
+               // var t = query.Skip((request.Skip - 1) * 2).Take(2).ToList();
+                //List<ProductDto> a = _mapper.Map<List<ProductDto>>(t);
 
                 var data = PagedList<Object>.ToPagedList(query, request.Skip, request.PageDataCount);
                 response.Data = _mapper.Map<List<ProductDto>>(data);

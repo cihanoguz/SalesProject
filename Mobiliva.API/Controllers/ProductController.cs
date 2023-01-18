@@ -27,7 +27,8 @@ namespace Mobiliva.API.Controllers
         [HttpPost]
         public ActionResult<BaseResponse<List<ProductDto>>> GetProduct([FromBody] ProductSearchRequest request)
         {
-            var response = _productService.GetProduct(request);
+            ProductSearchRequest request1 = new ProductSearchRequest();
+            var response = _productService.GetProduct(request1);
 
             return response;
         }
@@ -48,7 +49,7 @@ namespace Mobiliva.API.Controllers
 
                 //_productRepository.Add(dto);
 
-                que mail = new que();
+                queue mail = new queue();
                 /*    mail.Connect();
                     mail.DeclareExchange();
                     mail.DeclareQueue();
