@@ -1,11 +1,11 @@
 # SalesProject
 # Summary
 
-API development will be made for order transactions. The infrastructure, tools and workflow to be used in the application should be as follows.
+API development will be made for order transactions. The infrastructure, tools and workflow to be used in the application going to be as follows.
 
 # Tecnologies
   Framework: .Net 6
-  Dil: C#
+  Language: C#
   Database: Mssql
   ORM: Entity Framework – Code First Approach
   Memory Cache: .Net Memory Cache or Redis (started with .net memory cache, in future going to change to Redis)
