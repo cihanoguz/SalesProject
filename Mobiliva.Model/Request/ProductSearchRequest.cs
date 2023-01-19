@@ -19,7 +19,6 @@ namespace Mobiliva.Model.Request
 
         public int PageDataCount { get; set; }
 
-
     }
 }
 

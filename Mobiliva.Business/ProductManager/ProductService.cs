@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using Mobiliva.Model.Dto;
 using Mobiliva.Model.Request;
 using AutoMapper;
@@ -34,9 +34,13 @@ namespace Mobiliva.Business.ProductManager
             _cacheService = cacheService;
         }
 
-        public BaseResponse<List<ProductDto>> GetProduct(ProductSearchRequest request)
+        /// <summary>
+        /// This method fetches product list from database with given request
+        /// </summary>
+        /// <param name="request">Represents request</param>
+        /// <returns>This method returns list of product</returns>
+        public BaseResponse<List<ProductDto>> GetProductList(ProductSearchRequest request)
         {
-
             var response = new BaseResponse<List<ProductDto>>();
             response.Data = new List<ProductDto>();
           
@@ -44,7 +48,6 @@ namespace Mobiliva.Business.ProductManager
             {
                 var query = GetProductsFromCache();
            
-
                 if (request.Skip < 1)
                 {
                     request.Skip = 1;
@@ -63,14 +66,10 @@ namespace Mobiliva.Business.ProductManager
                     //query = query.Where(x => (request.MaxUnitPrice > 0 ? x.UnitPrice < request.MaxUnitPrice));
                 }
 
-               // var t = query.Skip((request.Skip - 1) * 2).Take(2).ToList();
-                //List<ProductDto> a = _mapper.Map<List<ProductDto>>(t);
-
                 var data = PagedList<Object>.ToPagedList(query, request.Skip, request.PageDataCount);
                 response.Data = _mapper.Map<List<ProductDto>>(data);
 
                 _logger.LogInformation("Seri köz getir");
-                // _logger.Log(LogLevel.Information)
 
             }
             catch (System.Exception ex)
@@ -81,9 +80,13 @@ namespace Mobiliva.Business.ProductManager
 
             return response;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private IQueryable<Mobiliva.DAL.Entities.Products.Product>? GetProductsFromCache()
         {
+            // todo take duration from appsettings - not write here 1
             if (!_cacheService.IsAdd("product"))
             {
                 _cacheService.Add("product", _productRepository.GetBy(x => x.RecordStatus == Mobiliva.Core.Enums.Enums.RecordStatus.Active), 1);
@@ -93,9 +96,6 @@ namespace Mobiliva.Business.ProductManager
             return retval;
 
         }
-
-     
-
 
         public class PagedList<T> : List<T>
         {
@@ -112,6 +112,7 @@ namespace Mobiliva.Business.ProductManager
                 TotalPages = (int)Math.Ceiling(count / (double)pageSize);
                 AddRange(items);
             }
+
             public static PagedList<T> ToPagedList(IQueryable<T> source, int pageNumber, int pageSize)
             {
                 pageSize = pageSize <= 1 ? 1 : pageSize;

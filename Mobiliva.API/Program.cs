@@ -12,6 +12,8 @@ using Serilog.Core;
 using Serilog.Sinks.MSSqlServer;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Caching.Memory;
+using Mobiliva.Business.Extensions;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +38,12 @@ builder.Logging.AddSerilog(log);
 
 builder.Services.AddMemoryCache();
 
+var mapperConfig = new MapperConfiguration(mc => {
+    mc.AddProfile(new AutoMapperProfile());
+});
+IMapper mapper = mapperConfig.CreateMapper();
+
+builder.Services.AddSingleton(mapper);
 builder.Services.AddSingleton<ICacheManager, MemoryCacheManager>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
@@ -55,7 +63,7 @@ builder.Services.AddDbContext<ApplicationContext>(options => {
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
+//builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
 
 var app = builder.Build();

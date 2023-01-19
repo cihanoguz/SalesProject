@@ -77,7 +77,7 @@ namespace Mobiliva.RabbitMQ.Receiving.Services.Notifications
             using (var smtp = new System.Net.Mail.SmtpClient
             {
                 Host = mailHost,
-                Port = 587,
+                Port = 587, // not hardcoded, take from constant
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 Credentials = new NetworkCredential(fromAdress.Address, mailPassword)

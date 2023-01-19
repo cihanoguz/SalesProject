@@ -19,6 +19,7 @@
     <None Remove="Serilog.AspNetCore" />
     <None Remove="Serilog.Sinks.MSSqlServer" />
     <None Remove="Serilog.Settings.Configuration" />
+    <None Remove="Rabbitmq\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
@@ -30,5 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
+    <Folder Include="Rabbitmq\" />
   </ItemGroup>
 </Project>

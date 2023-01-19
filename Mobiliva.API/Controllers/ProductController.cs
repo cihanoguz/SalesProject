@@ -25,10 +25,10 @@ namespace Mobiliva.API.Controllers
 
 
         [HttpPost]
-        public ActionResult<BaseResponse<List<ProductDto>>> GetProduct([FromBody] ProductSearchRequest request)
+        public ActionResult<BaseResponse<List<ProductDto>>> GetProductList([FromBody] ProductSearchRequest request)
         {
             ProductSearchRequest request1 = new ProductSearchRequest();
-            var response = _productService.GetProduct(request1);
+            var response = _productService.GetProductList(request1);
 
             return response;
         }
@@ -40,21 +40,8 @@ namespace Mobiliva.API.Controllers
 
             try
             {
-                //Product dto = new Product();
-                //dto.Category = "test";
-                //dto.Description = "test";
-                //dto.Unit = 1;
-                //dto.UnitPrice = 14;
-
-
-                //_productRepository.Add(dto);
-
-                queue mail = new queue();
-                /*    mail.Connect();
-                    mail.DeclareExchange();
-                    mail.DeclareQueue();
-                    mail.BindQueue();
-                    mail.Publish(); */
+                Queue mail = new Queue();
+            
                 mail.TestRabbitmq();
 
             }
@@ -72,15 +59,7 @@ namespace Mobiliva.API.Controllers
 
             try
             {
-               /* Product dto = new Product();
-                dto.Category = "test";
-                dto.Description = "test";
-                dto.Unit = 1;
-                dto.UnitPrice = 14;
-               */
-
-
-               // _productRepository.Add(dto);
+             
 
             }
             catch (Exception ex)

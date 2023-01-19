@@ -65,6 +65,7 @@ namespace Mobiliva.RabbitMQ.Receiving.Services
                     consumer.Received += (model, ea) =>
                     {
                         var body = ea.Body.ToArray();
+                        // this 1  and bodd.length for taking not "email@email.com"'s ""
                         var message = Encoding.UTF8.GetString(body,1,body.Length-2);
                         Console.WriteLine(message);
                         _notificationManager.SendMail("reset your password", message/*, null, null, null*/);

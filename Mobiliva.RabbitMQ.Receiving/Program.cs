@@ -21,14 +21,4 @@ services.AddScoped<INotificationManager, NotificationManager>();
 var serviceProvider = services.BuildServiceProvider();
 var rabbit = serviceProvider.GetService<RabbitmqListener>();
 
-
 rabbit.Run();
-
-
-
-
-
-
-
-
-

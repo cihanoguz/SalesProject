@@ -8,7 +8,7 @@ namespace Mobiliva.Business.ProductManager
 {
 	public interface IProductService
 	{
-        BaseResponse<List<ProductDto>> GetProduct(ProductSearchRequest request);
+        BaseResponse<List<ProductDto>> GetProductList(ProductSearchRequest request);
 
     }
 }
